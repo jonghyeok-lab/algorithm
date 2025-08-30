@@ -1,4 +1,4 @@
-package backjoon.barkingdog._0x04;
+package backjoon.barkingdog._0x04완;
 
 import java.io.BufferedReader;
 import java.io.IOException;
