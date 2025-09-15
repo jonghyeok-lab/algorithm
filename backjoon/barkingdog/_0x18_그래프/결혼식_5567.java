@@ -1,4 +1,4 @@
-package backjoon.barkingdog._0x18;
+package backjoon.barkingdog._0x18_그래프;
 
 import java.io.BufferedReader;
 import java.io.IOException;
