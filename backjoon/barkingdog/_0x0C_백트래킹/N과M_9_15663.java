@@ -26,30 +26,29 @@ public class N과M_9_15663 {
                 .toArray();
         visited = new boolean[n];
 
-        int[] arr = new int[m];
-        start(0, arr);
+        // 1 7 9 9
+        dfs(0, new int[m]);
     }
 
-    // 1 7 9 9
-    private static void start(int idx, int[] arr) {
-        if (idx == m) {
-            for(int i : arr) {
+    private static void dfs(int cnt, int[] answer) {
+        if (cnt == m) {
+            for (int i : answer) {
                 System.out.print(i + " ");
             }
-            System.out.println();
+//            System.out.println(Arrays.toString(answer));
             return;
         }
-
         int prev = -1;
-        for(int i = 0; i < arrInputs.length; i++) {
+        for (int i = 0; i < n; i++) {
             if (visited[i]) continue;
-            if (arrInputs[i] == prev) continue;
+            if (prev == arrInputs[i]) continue;
+            answer[cnt] = arrInputs[i];
             visited[i] = true;
-            arr[idx] = arrInputs[i];
-            start(idx + 1, arr);
-            visited[i] = false;
-
+            dfs(cnt + 1, answer);
             prev = arrInputs[i];
+            visited[i] = false;
         }
     }
+
+
 }
